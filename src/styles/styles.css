@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  header {
+    background-color: #0288d1;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  section {
+    padding: 20px;
+  }
+
+  /* Aplica el fondo globalmente a todo el cuerpo de la página */
+body {
+  background-image: url('../assets/img/volcan..avif');
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Asegúrate de que el contenido no se desborde y tenga el tamaño adecuado */
+html, body {
+  height: 100%;
+}
+
+/* Estilos para la sección de destinos */
+.destinations-container {
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));  /* Grilla responsive */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.destination-card {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.destination-card:hover {
+  transform: translateY(-10px);
+}
+
+.destination-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+p {
+  font-size: 1rem;
+  color: #ddd;
+}
+
+
+
+  

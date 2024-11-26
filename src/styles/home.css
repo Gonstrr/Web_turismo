@@ -1,0 +1,19 @@
+/* Estilos para la sección Home */
+#home {
+  background-image: url('../assets/img/volcan..avif');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+  box-sizing: border-box;
+  transition: background 0.5s ease-in-out;
+}
+

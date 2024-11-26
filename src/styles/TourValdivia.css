@@ -1,0 +1,56 @@
+.tour-valdivia {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #000000;
+  }
+  
+  .tours-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centra las tarjetas */
+  }
+  
+  .tour-card {
+    background: rgba(128, 128, 128, 0.356); /* Fondo gris translúcido */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.945);
+    text-align: center;
+  }
+  
+  .tour-card img {
+    width: 100%;
+    border-radius: 12px;
+  }
+  
+  .tour-card h2 {
+    font-size: 22px;
+    color: #dbcf20;
+  }
+  
+  .tour-card h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333333;
+  }
+  
+  .tour-card ul {
+    padding-left: 20px;
+    text-align: left;
+  }
+  
+  .tour-card p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #11161b;
+    font-size: 18px;
+  }
+  
+  .price-highlight {
+    color: #ffc107; /* Amarillo para destacar el precio */
+    font-size: 20px;
+  }
+  

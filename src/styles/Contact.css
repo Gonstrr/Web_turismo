@@ -1,0 +1,123 @@
+/* Estilos globales */
+body {
+    background-image: url('../assets/img/volcan..avif');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  
+  /* Contenedor principal */
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    min-height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para legibilidad */
+    box-sizing: border-box;
+  }
+  
+  /* Títulos y textos */
+  .contact-title {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  .contact-description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    max-width: 600px;
+    color: #eaeaea;
+  }
+  
+  /* Formularios */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 90%;
+    max-width: 500px;
+  }
+  
+  .contact-input,
+  .contact-textarea {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .contact-input::placeholder,
+  .contact-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .contact-input:focus,
+  .contact-textarea:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .contact-button {
+    padding: 12px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .contact-title {
+      font-size: 2rem;
+    }
+  
+    .contact-description {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contact-title {
+      font-size: 1.8rem;
+    }
+  
+    .contact-description {
+      font-size: 0.9rem;
+    }
+  
+    .contact-form {
+      gap: 10px;
+    }
+  
+    .contact-button {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+  }
+  
