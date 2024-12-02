@@ -20,12 +20,12 @@ const destinationsData: Destination[] = [
     description: "Una ciudad encantadora en el sur de Chile, conocida por su rica historia, arquitectura alemana, hermosos ríos y la cercanía a la naturaleza."
   },
   {
-    name: "Atacama",
+    name: "Tour en Navegación",
     image: "../images/valpo.jpg",
-    description: "Un desierto surrealista, hogar de paisajes increíbles y cielos despejados."
+    description: "La ciudad de Valdivia, conocida como la Perla del Sur, se encuentra rodeada por hermosos ríos, acompañada de historia, cultura y una frondosa selva valdiviana que te invitamos a vivenciar."
   },
   {
-    name: "Patagonia",
+    name: "",
     image: "../images/patagonia.jpg",
     description: "Una región con glaciares, montañas y paisajes naturales impresionantes."
   }
@@ -51,11 +51,17 @@ const Destinations: React.FC = () => (
             <Link to="/tours-santiago">
               <button className="reserve-btn">Ver Tours en Santiago</button>
             </Link>
+
           ) : destination.name === "Valdivia" ? (
             <Link to="/tours-valdivia">
               <button className="reserve-btn">Ver Tours en Valdivia</button>
             </Link>
-          ) : (
+
+          ) : destination.name === "Tour en Navegación" ? (
+            <Link to="/tours-navigation">
+              <button className="reserve-btn">Reserva ahora</button>
+
+            </Link>) : (
             <button className="reserve-btn">Reserva ahora</button>
           )}
         </div>

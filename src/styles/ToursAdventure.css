@@ -1,0 +1,76 @@
+.adventure-container {
+    padding: 20px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.5)), url('../images/your-standard-background.jpg') no-repeat center center/cover;
+    text-align: center;
+    position: relative;
+    min-height: 100vh; /* Asegura que ocupe toda la pantalla */
+    color: #08141b; /* Para garantizar buena visibilidad del texto */
+  }
+  
+  .adventure-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #fffffff1; /* Blanco para destacar sobre el fondo */
+  }
+  
+  .adventure-description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #f1f1f1; /* Un tono más claro de gris */
+  }
+  
+  .adventure-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .adventure-card {
+    background: rgba(102, 61, 61, 0.548); /* Fondo semitransparente para las tarjetas */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .adventure-image {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .adventure-card h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #ffffff;
+  }
+  
+  .adventure-card p {
+    font-size: 1rem;
+    margin: 8px 0;
+    color: #000000;
+  }
+  
+  .adventure-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e63946;
+  }
+  
+  .adventure-btn {
+    display: block;
+    width: 100%;
+    background: #2b7a78;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+  }
+  
+  .adventure-btn:hover {
+    background: #235b60;
+  }
+  

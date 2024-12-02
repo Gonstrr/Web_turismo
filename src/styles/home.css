@@ -1,19 +1,103 @@
-/* Estilos para la sección Home */
-#home {
-  background-image: url('../assets/img/volcan..avif');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  margin: 0;
-  box-sizing: border-box;
-  transition: background 0.5s ease-in-out;
+/* Estilo Global */
+:root {
+  --primary-bg: linear-gradient(to bottom, #bde0dc83, #253146);
+  --primary-color: #35ac06cb;  
+  --secondary-color: #ff5252;
+  --text-color: #ebebeb;
+  --button-radius: 25px;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Contenedor principal */
+.home-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  padding: 0 10%;
+  background: var(--primary-bg);
+  color: var(--text-color);
+  overflow: hidden; /* Evita que se vean elementos fuera del contenedor */
+}
+
+/* Caja de imagen */
+.image-box {
+  width: 45%;
+  height: 60%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: var(--button-radius);
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  opacity: 0; /* Oculta la imagen antes de la animación */
+  animation: slide-in 1s ease-in-out forwards;
+}
+
+/* Imagen izquierda */
+.image-left {
+  background-image: url('/images/santiago.jpg');
+  animation-delay: 0.2s;
+  transform: translateX(-100%);
+}
+
+/* Imagen derecha */
+.image-right {
+  background-image: url('/images/saltopetrohue.jpeg');
+  animation-delay: 0.4s;
+  transform: translateX(100%);
+}
+
+/* Botón dentro de la imagen */
+.image-button {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 12px 25px;
+  border: none;
+  border-radius: var(--button-radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Hover en el botón */
+.image-button:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.1);
+}
+
+/* Efecto hover en las imágenes */
+.image-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Animación: deslizamiento de izquierda a derecha */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(0); /* Posición inicial definida por cada imagen */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0); /* Imagen en su lugar final */
+  }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    padding: 5%;
+  }
+
+  .image-box {
+    width: 90%;
+    height: 50%;
+    margin-bottom: 20px;
+  }
+}

@@ -1,113 +1,184 @@
-/* Contenedor general */
+/* styles/TourSantiago.css */
+
+/* Configuración global */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal */
 .tours-santiago-container {
-    padding: 20px;
-    text-align: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    background: rgba(49, 46, 46, 0.205); /* Fondo transparente */
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 3rem 2rem; /* Aumenté el padding para mayor espacio */
+  color: #333;
+  background-color: #ecf0f1; /* Fondo suave */
+  min-height: 100vh;
+}
+
+/* Título principal */
+.tours-santiago-container h1 {
+  font-size: 3rem; /* Aumenté el tamaño para hacerlo más prominente */
+  color: #2c3e50;
+  margin-bottom: 2.5rem;
+  font-weight: 700; /* Para darle más peso */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Estilo para la cuadrícula de tours */
+.tours-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1.5rem;
+}
+
+/* Estilo para cada tarjeta de tour */
+.tour-card {
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 -2px 6px rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; /* Agregué animación de filtro */
+  opacity: 0;
+  animation: card-fade-in 0.5s ease-out forwards;
+}
+
+@keyframes card-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  
-  /* Título */
-  h1 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 2.5em;
-    color: #333;
-    margin-bottom: 20px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Estilo de la grilla */
-  .tours-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-    background-color: rgba(242, 242, 242, 0.007); /* Fondo gris suave y transparente */
-    padding: 20px;
-    border-radius: 10px;
-    backdrop-filter: blur(10px); /* Efecto de desenfoque de fondo */
+}
+
+/* Hover en tarjeta */
+.tour-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 -5px 10px rgba(255, 255, 255, 0.5);
+  filter: brightness(1.1); /* Agregué un ligero brillo */
+}
+
+/* Imagen del tour */
+.tour-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 2px solid #f1f1f1;
+  transition: transform 0.3s ease;
+}
+
+/* Detalles del tour */
+.tour-details {
+  padding: 1rem;
+  text-align: left;
+}
+
+.tour-details h2 {
+  font-size: 1.8rem; /* Aumenté el tamaño para mejorar la visibilidad */
+  color: #2980b9;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.tour-details p {
+  margin: 0.5rem 0;
+  color: #555;
+  font-size: 1rem;
+}
+
+/* Precio del tour */
+.price {
+  font-weight: bold;
+  color: #27ae60;
+  font-size: 1.2rem; /* Para resaltar el precio */
+}
+
+/* Botón de reserva */
+.reserve-btn {
+  background: linear-gradient(45deg, #6dd5ed, #2193b0);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  display: block;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-weight: 600;
+}
+
+.reserve-btn:hover {
+  background: linear-gradient(45deg, #2193b0, #6dd5ed);
+  transform: scale(1.05);
+}
+
+.reserve-btn:focus {
+  outline: none;
+}
+
+/* Animaciones del botón */
+@keyframes button-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .tours-santiago-container h1 {
+    font-size: 2rem; /* Reducir tamaño del título */
   }
 
-  
-  
-  /* Tarjetas de tours */
   .tour-card {
-    background-color: #4d242465;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    border-radius: 15px; /* Redondear más las tarjetas */
   }
-  
-  /* Efecto al pasar el ratón sobre la tarjeta */
-  .tour-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+
+  .tour-details h2 {
+    font-size: 1.4rem; /* Reducir tamaño del subtítulo */
   }
-  
-  /* Imagen del tour */
-  .tour-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 2px solid #f1f1f1;
+
+  .tour-details p {
+    font-size: 0.9rem; /* Ajustar tamaño del texto */
   }
-  
-  /* Detalles del tour */
-  .tour-details {
-    padding: 15px;
-  }
-  
-  /* Títulos y descripciones */
-  h2 {
-    font-size: 1.6em;
-    color: #818b8b;
-    margin-bottom: 10px;
-  }
-  
-  p {
-    color: #eee6e6;
-    font-size: 1em;
-    margin-bottom: 10px;
-  }
-  
-  /* Precio */
-  .price {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #f3bc06;
-    margin-top: 10px;
-  }
-  
-  /* Botón de reserva */
+
   .reserve-btn {
-    background-color: #009688;
-    color: white;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 20px;
+    font-size: 1rem; /* Reducir tamaño del botón */
   }
-  
-  .reserve-btn:hover {
-    background-color: #00796b;
-    transform: scale(1.05);
+
+  .tour-image {
+    height: 180px; /* Ajustar altura de imagen */
   }
-  
-  /* Diseño responsivo */
-  @media (max-width: 768px) {
-    .tours-grid {
-      grid-template-columns: 1fr 1fr;
-    }
+}
+
+@media (max-width: 480px) {
+  .tours-santiago-container {
+    padding: 1.5rem;
   }
-  
-  @media (max-width: 480px) {
-    .tours-grid {
-      grid-template-columns: 1fr;
-    }
+
+  .tours-santiago-container h1 {
+    font-size: 1.8rem; /* Ajustar aún más el título */
   }
-  
+
+  .tour-details h2 {
+    font-size: 1.2rem;
+  }
+
+  .reserve-btn {
+    font-size: 0.9rem; /* Reducir aún más el tamaño del botón */
+  }
+
+  .tour-image {
+    height: 150px; /* Ajuste adicional en imagen */
+  }
+}

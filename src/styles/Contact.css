@@ -1,123 +1,161 @@
-/* Estilos globales */
-body {
-    background-image: url('../assets/img/volcan..avif');
-    background-size: cover;
-    background-position: center;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    display: flex;
+/* Contenedor principal */
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.685); /* Fondo semi-transparente */
+  background-image: url('../assets/img/volcan.avif'); /* Imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  overflow: hidden; /* Evitar que se vean elementos fuera del contenedor */
+}
+
+/* Fondo común y estilos aplicados de Home */
+.destinations-container {
+  background-color: #f5f5f515; /* Fondo semi-transparente */
+  background-image: url('../assets/img/fondo-universal.jpg'); /* Fondo común */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Título de contacto */
+.contact-title {
+  font-size: 2.5rem;
+  color: #f1c40f;
+  margin-bottom: 20px;
+  animation: fade-in 1s ease-in-out; /* Añadido: animación de entrada */
+}
+
+/* Descripción de contacto */
+.contact-description {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #eaeaea;
+  opacity: 0; /* Ocultar antes de la animación */
+  animation: fade-in 1s ease-in-out forwards 0.5s; /* Añadido: animación de entrada */
+}
+
+/* Contenido de contacto */
+.contact-content {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1000px;
+  opacity: 0; /* Ocultar antes de la animación */
+  animation: slide-up 1s ease-in-out forwards 1s; /* Añadido: animación de entrada */
+}
+
+/* Información de contacto y formulario */
+.contact-info,
+.contact-form-container {
+  flex: 1 1 45%;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  gap: 50px;
+  margin-right: 40px;
+}
+
+/* Títulos de información y formulario */
+.contact-info-title,
+.contact-form-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #f1c40f;
+}
+
+/* Párrafos de información de contacto */
+.contact-info p {
+  margin: 5px 0;
+}
+
+/* Estilos del formulario */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-right: 40px;
+}
+
+/* Inputs y textarea */
+.contact-input,
+.contact-textarea {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 5px;
+}
+
+/* Placeholder de inputs y textarea */
+.contact-input::placeholder,
+.contact-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Estilos del botón */
+.contact-button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Hover en el botón */
+.contact-button:hover {
+  background-color: #0056b3;
+}
+
+/* Animación de entrada */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animación de deslizamiento */
+@keyframes slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .contact-content {
     flex-direction: column;
-    min-height: 100vh;
-    box-sizing: border-box;
   }
-  
-  /* Contenedor principal */
-  .contact-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    text-align: center;
-    min-height: 100vh;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para legibilidad */
-    box-sizing: border-box;
+
+  .contact-info,
+  .contact-form-container {
+    flex: 1 1 100%;
+    gap: 50px;
+    margin-right: 40px;
   }
-  
-  /* Títulos y textos */
-  .contact-title {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    font-weight: bold;
-  }
-  
-  .contact-description {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    max-width: 600px;
-    color: #eaeaea;
-  }
-  
-  /* Formularios */
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 90%;
-    max-width: 500px;
-  }
-  
-  .contact-input,
-  .contact-textarea {
-    width: 100%;
-    padding: 12px 15px;
-    font-size: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-    border-radius: 5px;
-    transition: border-color 0.3s ease, background-color 0.3s ease;
-  }
-  
-  .contact-input::placeholder,
-  .contact-textarea::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-  }
-  
-  .contact-input:focus,
-  .contact-textarea:focus {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-color: #007bff;
-    outline: none;
-  }
-  
-  .contact-button {
-    padding: 12px 15px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: white;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .contact-button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Responsividad */
-  @media (max-width: 768px) {
-    .contact-title {
-      font-size: 2rem;
-    }
-  
-    .contact-description {
-      font-size: 1rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .contact-title {
-      font-size: 1.8rem;
-    }
-  
-    .contact-description {
-      font-size: 0.9rem;
-    }
-  
-    .contact-form {
-      gap: 10px;
-    }
-  
-    .contact-button {
-      font-size: 0.9rem;
-      padding: 10px;
-    }
-  }
-  
+}

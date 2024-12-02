@@ -1,81 +1,92 @@
-/* Estilo general del header */
+/* Estilos para el contenedor del encabezado */
 header {
-    display: flex;
-    justify-content: space-between; /* Espacia el título y la navegación */
-    align-items: center; /* Centra los elementos verticalmente */
-    padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro translúcido */
-    color: white;
-    position: fixed; /* Fijo en la parte superior */
-    top: 0;
-    width: 100%;
-    z-index: 1000; /* Asegura que esté encima de otros elementos */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  }
+  background-color: rgba(63, 90, 88, 0.575); /* Fondo semi-transparente */
+  color: #fff;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenido del encabezado (logo y navegación) */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Contenedor del logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Estilo del logo */
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+
+}
+
+/* Estilos para el título */
+header h1 {
+  font-size: 2rem;
+  color: #ff6347;
+  margin: 10;
+  margin-right: 40px;
   
-  /* Estilo del título */
+}
+
+/* Navegación */
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+/* Enlaces de navegación */
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
+  padding: 5px 0;
+}
+
+/* Efecto hover con subrayado animado */
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
   header h1 {
-    font-size: 1.8rem;
-    margin: 0;
+    font-size: 1.5rem;
   }
-  
-  /* Estilo de la navegación */
+
   nav {
-    display: flex; /* Mantiene los enlaces en fila */
-    gap: 20px; /* Espaciado entre enlaces */
-    flex-wrap: nowrap; /* Evita que los enlaces se apilen */
+    flex-direction: column;
+    gap: 20px;
   }
-  
-  /* Estilo de los enlaces */
+
   nav a {
-    text-decoration: none;
-    color: white;
     font-size: 1rem;
-    padding: 8px 15px; /* Espaciado interno para simular botones */
-    border: 2px solid transparent; /* Borde invisible */
-    border-radius: 5px; /* Bordes redondeados */
-    transition: all 0.3s ease-in-out;
   }
-  
-  nav a:hover {
-    color: #ff5733; /* Cambia el color del texto al pasar el cursor */
-    border-color: #ff5733; /* Agrega un borde visible */
-    background-color: rgba(255, 87, 51, 0.1); /* Fondo ligero al hover */
-  }
-  
-  /* Responsividad para pantallas más pequeñas */
-  @media (max-width: 768px) {
-    header {
-      flex-direction: column; /* Coloca el título y la navegación en columna */
-      align-items: center; /* Centra todos los elementos */
-      padding: 15px;
-    }
-  
-    nav {
-      flex-wrap: wrap; /* Permite que los enlaces se ajusten si no caben */
-      justify-content: center; /* Centra los botones */
-      gap: 15px; /* Menor espacio entre los botones en pantallas pequeñas */
-    }
-  
-    header h1 {
-      font-size: 1.5rem; /* Reduce el tamaño del título */
-      margin-bottom: 10px; /* Espacio entre el título y los enlaces */
-    }
-  }
-  
-  /* Para pantallas muy pequeñas */
-  @media (max-width: 480px) {
-    header {
-      padding: 10px;
-    }
-  
-    header h1 {
-      font-size: 1.3rem; /* Ajusta aún más el tamaño del título */
-    }
-  
-    nav a {
-      font-size: 0.8rem;
-      padding: 6px 12px; /* Reduce el tamaño de los botones */
-    }
-  }
-  
+}

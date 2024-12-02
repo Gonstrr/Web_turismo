@@ -1,89 +1,64 @@
-/* Modal Overlay */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6); /* Fondo oscuro más intenso */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-/* Modal Content */
-.modal-content {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  width: 80%;
-  max-width: 600px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  animation: fadeIn 0.3s ease-out;
-}
-
-/* Modal Image */
-.modal-image {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-/* Close Button */
-.close-btn {
-  background-color: #ff7b7b; /* Rosa más suave */
+.destinations-container {
+  background: linear-gradient(to bottom, #00796b, #004d40);
   color: white;
-  padding: 15px 30px;
-  border: none;
-  border-radius: 50px; /* Bordes redondeados */
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-top: 20px;
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
 }
 
-.close-btn:hover {
-  background-color: #ff5252; /* Color más fuerte al pasar el ratón */
-  transform: scale(1.05); /* Aumento de tamaño al pasar el ratón */
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 20px;
 }
 
-.close-btn:focus {
-  outline: none;
+.destination-card {
+  background: white;
+  color: #004d40;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Animación de entrada del modal */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+.destination-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Botones generales */
+.destination-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
 .reserve-btn {
-  background-color: #009688; /* Verde Aqua */
-  color: rgba(255, 255, 255, 0.034);
-  padding: 12px 30px;
+  background-color: #ff5252;
+  color: white;
+  padding: 12px 20px;
   border: none;
-  border-radius: 50px;
+  border-radius: 25px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-top: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 15px;
 }
 
 .reserve-btn:hover {
-  background-color: #00796b; /* Verde más oscuro */
-  transform: scale(1.05); /* Efecto de agrandamiento */
+  background-color: #00796b;
+  transform: scale(1.1);
 }
 
-.reserve-btn:focus {
-  outline: none;
+@media (max-width: 768px) {
+  .destination-card {
+    padding: 10px;
+  }
+
+  .reserve-btn {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
 }

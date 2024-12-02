@@ -1,29 +1,33 @@
-import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/home.css';
 
 const Home = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
 
-  const handleScroll = () => {
-    const homeSection = document.getElementById('home');
-    if (homeSection && window.scrollY + window.innerHeight > homeSection.offsetTop) {
-      setIsVisible(true);
-    }
+  const handleSantiagoClick = () => {
+    navigate('/tours-santiago');
   };
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  const handleValdiviaClick = () => {
+    navigate('/tours-valdivia');
+  };
 
   return (
-    <section id="home" className={isVisible ? 'visible' : ''}>
-      <h2>Bienvenido a Turismo Camino Aventura</h2>
-      <p>Explora los mejores destinos y experiencias únicas.</p>
-      <button>Conoce Mas</button>
-    </section>
+    <div className="home-container">
+      {/* Imagen izquierda */}
+      <div className="image-box image-left">
+        <button className="image-button" onClick={handleSantiagoClick}>
+          Tours Santiago
+        </button>
+      </div>
+
+      {/* Imagen derecha */}
+      <div className="image-box image-right">
+        <button className="image-button" onClick={handleValdiviaClick}>
+          Tour Valdivia
+        </button>
+      </div>
+    </div>
   );
 };
 
